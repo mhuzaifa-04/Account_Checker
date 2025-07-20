@@ -6,11 +6,11 @@ def deposit():
   while True:
     amount=int(input("Enter the amount you want to deposit:"))
     if amount>0:
-        data['balance'] <=amount
+        data['balance'] +=amount
         with open('balance.json','w') as files:
             json.dump(data,files)
         print("Deposited Successfully ✅")
-        balance()
+        check_balance()
         break
     else:
         print("Try again! You entered invalid❌ amount")
@@ -26,7 +26,7 @@ def withdraw():
             print("Withdraw Successful✅")
             print("Want to check balance ?",end="")
             balance_check=input("Enter (yes/no): ").lower()
-            if balance_check=="no":
+            if balance_check=="yes":
                 check_balance()
                 break
             else:
